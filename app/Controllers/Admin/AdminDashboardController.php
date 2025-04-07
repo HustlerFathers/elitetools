@@ -1,5 +1,5 @@
-Some Implications misssing <?php
-namespace App\Controllers\Admin;
+<?php
+namespace App\Controllers;
 
 use App\Core\Session;
 use App\Core\Database; // Added import for Database
@@ -115,10 +115,6 @@ class AdminController extends Controller
         
         $template->display();
     }
-}
-
-
-class ShellController extends Controller
 
     public function ShellIndex()
     {
@@ -957,7 +953,7 @@ public function adminMainIndex()
     
         $csrf_token = CsrfHelper::generateToken();
         // Load countrycodes if needed.
-        $countrycodes = require __DIR__ . '/../../../config/countrycodes.php';
+        $countrycodes = require 'config/countrycodes.php';
     
         // Define a mapping from bank names to regions.
         // Adjust the arrays as needed for your application.
@@ -1204,4 +1200,4 @@ public function adminMainIndex()
     public function buyTD() { $this->buy('tdbanks'); }
     public function buyRBC() { $this->buy('rbcbanks'); }
     public function buyBMO() { $this->buy('bmobanks'); }
-} spilt classs 
+}
